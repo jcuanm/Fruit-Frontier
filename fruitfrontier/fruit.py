@@ -48,7 +48,7 @@ class Banana(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self) 
  
         # Loads the banana image and makes it blend in with the background
-        self.image = pygame.image.load('banana2.png').convert()
+        self.image = pygame.image.load('images/banana2.png').convert()
         self.image.set_colorkey(BLACK)
  
         # Fetch the rectangle object that has the dimensions of the image.
@@ -65,7 +65,7 @@ class Orange(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self) 
 
         # Loads the orange image and makes it blend in with the background
-        self.image = pygame.image.load('orange2.png').convert()
+        self.image = pygame.image.load('images/orange2.png').convert()
         self.image.set_colorkey(BLACK)
 
         self.rect = self.image.get_rect()
@@ -77,7 +77,7 @@ class Coconut (pygame.sprite.Sprite):
         #super().__init__()
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = pygame.image.load('coconut.png').convert()
+        self.image = pygame.image.load('images/coconut.png').convert()
         self.image.set_colorkey(WHITE)
         
         self.rect = self.image.get_rect()
@@ -90,7 +90,7 @@ class Shield (pygame.sprite.Sprite):
         #super().__init__()
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = pygame.image.load('shield.png').convert()
+        self.image = pygame.image.load('images/shield.png').convert()
         self.image.set_colorkey(BLACK)
         
         self.rect = self.image.get_rect()
@@ -103,7 +103,7 @@ class Pineapple (pygame.sprite.Sprite):
         #super().__init__()
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = pygame.image.load('pineapple.png').convert()
+        self.image = pygame.image.load('images/pineapple.png').convert()
         self.image.set_colorkey(WHITE)
         
         self.rect = self.image.get_rect()
@@ -116,7 +116,7 @@ class Spike (pygame.sprite.Sprite):
         #super().__init__()
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = pygame.image.load('spike.png').convert()
+        self.image = pygame.image.load('images/spike.png').convert()
         self.image.set_colorkey(WHITE)
         
         self.rect = self.image.get_rect()
@@ -129,7 +129,7 @@ class Grape (pygame.sprite.Sprite):
         #super().__init__()
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = pygame.image.load('grapes.png').convert()
+        self.image = pygame.image.load('images/grapes.png').convert()
         self.image.set_colorkey(WHITE)
         
         self.rect = self.image.get_rect()
@@ -142,7 +142,7 @@ class Pomegranate (pygame.sprite.Sprite):
         #super().__init__()
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = pygame.image.load('pom.png').convert()
+        self.image = pygame.image.load('images/pom.png').convert()
         self.image.set_colorkey(WHITE)
         
         self.rect = self.image.get_rect()
@@ -163,11 +163,11 @@ class Collision (pygame.sprite.Sprite):
 def main_game_loop():    
 
     #SOUNDS
-    laser = pygame.mixer.Sound("laser2.wav")
-    impact = pygame.mixer.Sound("dead.wav")
-    contact = pygame.mixer.Sound("object.wav")
+    laser = pygame.mixer.Sound("sound/laser2.wav")
+    impact = pygame.mixer.Sound("sound/dead.wav")
+    contact = pygame.mixer.Sound("sound/object.wav")
 
-    pygame.mixer.music.load('background.ogg')
+    pygame.mixer.music.load('sound/background.ogg')
     pygame.mixer.music.set_endevent(pygame.constants.USEREVENT)
     pygame.mixer.music.play()
 
@@ -263,28 +263,28 @@ def main_game_loop():
     galaxy_stars.append(stars4)
 
     #Loads the logo
-    logo = pygame.image.load('logo.PNG').convert()
+    logo = pygame.image.load('images/logo.PNG').convert()
     logo.set_colorkey(BLACK)
     alpha = 0
 
     #Loads CUANIMATION
-    cuanimation = pygame.image.load('cuanimation.PNG').convert()
+    cuanimation = pygame.image.load('images/cuanimation.PNG').convert()
     cuanimation.set_colorkey(WHITE)
     
     #Loads the background
-    background_image = pygame.image.load('apple.PNG').convert()
+    background_image = pygame.image.load('images/apple.PNG').convert()
     background_image.set_colorkey(BLACK)
 
     #Loads the Game Over
-    gameover_img = pygame.image.load('gameover.PNG').convert()
+    gameover_img = pygame.image.load('images/gameover.PNG').convert()
     gameover_img.set_colorkey(BLACK)
     
     #loads the dead banana
-    dead_banana = pygame.image.load('dead_banana.PNG').convert()
+    dead_banana = pygame.image.load('images/dead_banana.PNG').convert()
     dead_banana.set_colorkey(BLACK)
 
     #loads the rainbow background
-    rainbow = pygame.image.load('rainbow.png')
+    rainbow = pygame.image.load('images/rainbow.png')
     angle = 0
 
     #starting position and speed of banana
@@ -421,9 +421,6 @@ def main_game_loop():
                         all_sprites_list.add(banana)
                         banana.rect.x = 0
                         banana.rect.y = screen_height/2
-                        
-                            
-        # --- Game logic should go here
    
         # Set the player object location
         banana.rect.x += banana_xspeed 
