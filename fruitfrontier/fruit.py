@@ -709,9 +709,9 @@ def main_game_loop():
         # --- Limit to 60 frames per second
         clock.tick(60)
 
+    f.close()
 main_game_loop()
 #Exits the screen safely
 pygame.quit()
-
 
 
